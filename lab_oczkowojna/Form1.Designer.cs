@@ -45,7 +45,6 @@
             this.wojna.TabStop = true;
             this.wojna.Text = "WOJNA";
             this.wojna.UseVisualStyleBackColor = true;
-            this.wojna.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // oczko
             // 
@@ -59,8 +58,6 @@
             this.oczko.TabStop = true;
             this.oczko.Text = "OCZKO";
             this.oczko.UseVisualStyleBackColor = true;
-            this.oczko.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
