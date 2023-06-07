@@ -28,42 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.wojna = new System.Windows.Forms.RadioButton();
+            this.oczko = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // wojna
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(666, 31);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(91, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "WOJNA";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.wojna.AutoSize = true;
+            this.wojna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.wojna.Location = new System.Drawing.Point(17, 58);
+            this.wojna.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.wojna.Name = "wojna";
+            this.wojna.Size = new System.Drawing.Size(91, 24);
+            this.wojna.TabIndex = 0;
+            this.wojna.TabStop = true;
+            this.wojna.Text = "WOJNA";
+            this.wojna.UseVisualStyleBackColor = true;
+            this.wojna.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
-            // radioButton2
+            // oczko
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(666, 61);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(89, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "OCZKO";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.oczko.AutoSize = true;
+            this.oczko.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.oczko.Location = new System.Drawing.Point(17, 82);
+            this.oczko.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.oczko.Name = "oczko";
+            this.oczko.Size = new System.Drawing.Size(88, 24);
+            this.oczko.TabIndex = 1;
+            this.oczko.TabStop = true;
+            this.oczko.Text = "OCZKO";
+            this.oczko.UseVisualStyleBackColor = true;
+            this.oczko.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(12, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 25);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Wybierz grę";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 562);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BackColor = System.Drawing.Color.Thistle;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.oczko);
+            this.Controls.Add(this.wojna);
             this.Name = "Form1";
             this.Text = "WOJNA LUB OCZKO ;)";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -74,8 +90,9 @@
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton wojna;
+        private System.Windows.Forms.RadioButton oczko;
+        private System.Windows.Forms.Label label1;
     }
 }
 
