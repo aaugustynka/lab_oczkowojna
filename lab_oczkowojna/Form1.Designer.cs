@@ -84,85 +84,80 @@
             // 
             // playButton
             // 
-            this.playButton.Location = new System.Drawing.Point(118, 192);
+            this.playButton.Location = new System.Drawing.Point(161, 111);
             this.playButton.Name = "playButton";
             this.playButton.Size = new System.Drawing.Size(78, 49);
             this.playButton.TabIndex = 3;
             this.playButton.Text = "PLAY";
             this.playButton.UseVisualStyleBackColor = true;
-            this.playButton.Click += new System.EventHandler(this.playButton_Click_1);
             // 
             // restartButton
             // 
-            this.restartButton.Location = new System.Drawing.Point(76, 297);
+            this.restartButton.Location = new System.Drawing.Point(119, 166);
             this.restartButton.Name = "restartButton";
             this.restartButton.Size = new System.Drawing.Size(120, 31);
             this.restartButton.TabIndex = 4;
             this.restartButton.Text = "RESTART";
             this.restartButton.UseVisualStyleBackColor = true;
-            this.restartButton.Click += new System.EventHandler(this.restartButton_Click_1);
             // 
             // playerCardPictureBox
             // 
-            this.playerCardPictureBox.Location = new System.Drawing.Point(355, 41);
+            this.playerCardPictureBox.Location = new System.Drawing.Point(458, 84);
             this.playerCardPictureBox.Name = "playerCardPictureBox";
-            this.playerCardPictureBox.Size = new System.Drawing.Size(122, 71);
+            this.playerCardPictureBox.Size = new System.Drawing.Size(168, 308);
+            this.playerCardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.playerCardPictureBox.TabIndex = 5;
             this.playerCardPictureBox.TabStop = false;
-            this.playerCardPictureBox.Click += new System.EventHandler(this.playerCardPictureBox_Click);
             // 
             // computerCardPictureBox
             // 
-            this.computerCardPictureBox.Location = new System.Drawing.Point(337, 158);
+            this.computerCardPictureBox.Location = new System.Drawing.Point(270, 84);
             this.computerCardPictureBox.Name = "computerCardPictureBox";
-            this.computerCardPictureBox.Size = new System.Drawing.Size(100, 50);
+            this.computerCardPictureBox.Size = new System.Drawing.Size(168, 308);
+            this.computerCardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.computerCardPictureBox.TabIndex = 6;
             this.computerCardPictureBox.TabStop = false;
             // 
             // playerWarCardPictureBox
             // 
-            this.playerWarCardPictureBox.Location = new System.Drawing.Point(294, 297);
+            this.playerWarCardPictureBox.Location = new System.Drawing.Point(36, 287);
             this.playerWarCardPictureBox.Name = "playerWarCardPictureBox";
-            this.playerWarCardPictureBox.Size = new System.Drawing.Size(100, 50);
+            this.playerWarCardPictureBox.Size = new System.Drawing.Size(203, 67);
             this.playerWarCardPictureBox.TabIndex = 7;
             this.playerWarCardPictureBox.TabStop = false;
-            this.playerWarCardPictureBox.Click += new System.EventHandler(this.playerWarCardPictureBox_Click);
             // 
             // computerWarCardPictureBox
             // 
-            this.computerWarCardPictureBox.Location = new System.Drawing.Point(377, 329);
+            this.computerWarCardPictureBox.Location = new System.Drawing.Point(139, 220);
             this.computerWarCardPictureBox.Name = "computerWarCardPictureBox";
             this.computerWarCardPictureBox.Size = new System.Drawing.Size(100, 50);
             this.computerWarCardPictureBox.TabIndex = 8;
             this.computerWarCardPictureBox.TabStop = false;
-            this.computerWarCardPictureBox.Click += new System.EventHandler(this.computerWarPictureBox_Click);
             // 
             // playerCardsLabel
             // 
             this.playerCardsLabel.AutoSize = true;
-            this.playerCardsLabel.Location = new System.Drawing.Point(556, 115);
+            this.playerCardsLabel.Location = new System.Drawing.Point(273, 407);
             this.playerCardsLabel.Name = "playerCardsLabel";
             this.playerCardsLabel.Size = new System.Drawing.Size(85, 16);
             this.playerCardsLabel.TabIndex = 9;
             this.playerCardsLabel.Text = "Player Cards";
-            this.playerCardsLabel.Click += new System.EventHandler(this.playerCardsLabel_Click);
             // 
             // computerCardsLabel
             // 
             this.computerCardsLabel.AutoSize = true;
-            this.computerCardsLabel.Location = new System.Drawing.Point(577, 225);
+            this.computerCardsLabel.Location = new System.Drawing.Point(455, 407);
             this.computerCardsLabel.Name = "computerCardsLabel";
             this.computerCardsLabel.Size = new System.Drawing.Size(101, 16);
             this.computerCardsLabel.TabIndex = 10;
             this.computerCardsLabel.Text = "ComputerCards";
-            this.computerCardsLabel.Click += new System.EventHandler(this.computerCardsLabel_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1475, 990);
             this.Controls.Add(this.computerCardsLabel);
             this.Controls.Add(this.playerCardsLabel);
             this.Controls.Add(this.computerWarCardPictureBox);

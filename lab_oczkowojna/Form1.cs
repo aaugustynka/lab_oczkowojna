@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace lab_oczkowojna
@@ -13,6 +14,7 @@ namespace lab_oczkowojna
         private Random random;
         private bool gameStarted;
 
+
         public Form1()
         {
             InitializeComponent();
@@ -21,44 +23,57 @@ namespace lab_oczkowojna
 
         private void InitializeGame()
         {
-            // Inicjalizacja talii kart
-            playerDeck = new List<Card>();
-            computerDeck = new List<Card>();
-            warCards = new List<Card>();
-            random = new Random();
 
-            // Utworzenie talii kart
-            var suits = Enum.GetValues(typeof(CardSuit));
-            var ranks = Enum.GetValues(typeof(CardRank));
-            foreach (CardSuit suit in suits)
-            {
-                foreach (CardRank rank in ranks)
+                // Inicjalizacja talii kart
+                playerDeck = new List<Card>();
+                computerDeck = new List<Card>();
+                warCards = new List<Card>();
+                random = new Random();
+
+                // Utworzenie talii kart
+                var suits = Enum.GetValues(typeof(CardSuit));
+                var ranks = Enum.GetValues(typeof(CardRank));
+                foreach (CardSuit suit in suits)
                 {
-                    var card = new Card(suit, rank);
-                    playerDeck.Add(card);
+                    foreach (CardRank rank in ranks)
+                    {
+                        var card = new Card(rank, suit);
+                        playerDeck.Add(card);
+                    }
                 }
-            }
 
-            // Tasowanie talii kart
-            for (int i = 0; i < playerDeck.Count; i++)
-            {
-                var temp = playerDeck[i];
-                int randomIndex = random.Next(playerDeck.Count);
-                playerDeck[i] = playerDeck[randomIndex];
-                playerDeck[randomIndex] = temp;
-            }
+                // Tasowanie talii kart
+                Shuffle(playerDeck);
 
-            // Podział talii kart pomiędzy gracza a komputer
-            for (int i = 0; i < playerDeck.Count; i++)
-            {
-                if (i % 2 == 0)
+                // Podział talii kart pomiędzy gracza a komputer
+                int deckSize = playerDeck.Count;
+                int halfSize = deckSize / 2;
+                for (int i = 0; i < halfSize; i++)
+                {
                     computerDeck.Add(playerDeck[i]);
-                else
+                }
+                for (int i = halfSize; i < deckSize; i++)
+                {
                     playerDeck[i].IsFaceUp = true;
-            }
+                }
 
-            gameStarted = false;
+                gameStarted = false;
+            
         }
+
+        private void Shuffle<T>(List<T> list)
+        {
+            int n = list.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = random.Next(n + 1);
+                T value = list[k];
+                list[k] = list[n];
+                list[n] = value;
+            }
+        }
+
 
         private void UpdateUI()
         {
@@ -72,7 +87,6 @@ namespace lab_oczkowojna
             {
                 gameStarted = true;
                 warCards.Clear();
-                UpdateUI();
                 playButton.Enabled = false;
 
                 if (playerDeck.Count == 0 || computerDeck.Count == 0)
@@ -90,7 +104,7 @@ namespace lab_oczkowojna
                 playerCardPictureBox.Image = playerCard.GetCardImage();
                 computerCardPictureBox.Image = computerCard.GetCardImage();
 
-                if (wojna_CheckedChanged.Checked)
+                if (wojna.Checked)
                 {
                     if (playerCard.Rank > computerCard.Rank)
                     {
@@ -150,7 +164,6 @@ namespace lab_oczkowojna
                 {
                     var playerWarCard = playerDeck[0];
                     playerDeck.RemoveAt(0);
-                    playerWarCardPictureBox.Image = playerWarCard.GetCardImage();
                     warCards.Add(playerWarCard);
                 }
 
@@ -158,7 +171,6 @@ namespace lab_oczkowojna
                 {
                     var computerWarCard = computerDeck[0];
                     computerDeck.RemoveAt(0);
-                    computerWarCardPictureBox.Image = computerWarCard.GetCardImage();
                     warCards.Add(computerWarCard);
                 }
             }
@@ -168,9 +180,8 @@ namespace lab_oczkowojna
 
         private void wojna_CheckedChanged(object sender, EventArgs e)
         {
-            if (wojna_CheckedChanged.Checked)
+            if (wojna.Checked)
             {
-                // Wyczyść stos wojny
                 warCards.Clear();
                 playerWarCardPictureBox.Image = null;
                 computerWarCardPictureBox.Image = null;
@@ -216,25 +227,53 @@ namespace lab_oczkowojna
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 
     public class Card
     {
-        public CardSuit Suit { get; private set; }
-        public CardRank Rank { get; private set; }
+        public CardRank Rank { get; set; }
+        public CardSuit Suit { get; set; }
         public bool IsFaceUp { get; set; }
 
-        public Card(CardSuit suit, CardRank rank)
+        public Card(CardRank rank, CardSuit suit)
         {
-            Suit = suit;
             Rank = rank;
+            Suit = suit;
             IsFaceUp = false;
         }
 
         public Image GetCardImage()
         {
-            string imageName = IsFaceUp ? $"{Rank}_{Suit}.png" : "card_back.png";
-            return Image.FromFile(imageName);
+            string rankString = ((int)Rank).ToString();
+            switch (Rank)
+            {
+                case CardRank.Jack:
+                    rankString = "jack";
+                    break;
+                case CardRank.Queen:
+                    rankString = "queen";
+                    break;
+                case CardRank.King:
+                    rankString = "king";
+                    break;
+                case CardRank.Ace:
+                    rankString = "ace";
+                    break;
+            }
+
+            string imagePath = Path.Combine("images", $"{rankString}_of_{Suit.ToString().ToLower()}.png");
+
+            byte[] imageBytes = File.ReadAllBytes(imagePath);
+
+            using (MemoryStream memoryStream = new MemoryStream(imageBytes))
+            {
+                return Image.FromStream(memoryStream);
+            }
         }
     }
 
