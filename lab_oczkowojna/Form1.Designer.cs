@@ -32,20 +32,24 @@
             this.oczko = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.playButton = new System.Windows.Forms.Button();
-            this.lblPlayer1Card = new System.Windows.Forms.Label();
-            this.txtPlayer1Cards = new System.Windows.Forms.TextBox();
-            this.txtPlayer2Cards = new System.Windows.Forms.TextBox();
-            this.lblPlayer2Card = new System.Windows.Forms.Label();
-            this.lblWarInfo = new System.Windows.Forms.Label();
-            this.kartyys = new System.Windows.Forms.Label();
-            this.kyst = new System.Windows.Forms.Label();
+            this.restartButton = new System.Windows.Forms.Button();
+            this.playerCardPictureBox = new System.Windows.Forms.PictureBox();
+            this.computerCardPictureBox = new System.Windows.Forms.PictureBox();
+            this.playerWarCardPictureBox = new System.Windows.Forms.PictureBox();
+            this.computerWarCardPictureBox = new System.Windows.Forms.PictureBox();
+            this.playerCardsLabel = new System.Windows.Forms.Label();
+            this.computerCardsLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.playerCardPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.computerCardPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerWarCardPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.computerWarCardPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // wojna
             // 
             this.wojna.AutoSize = true;
             this.wojna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wojna.Location = new System.Drawing.Point(17, 43);
+            this.wojna.Location = new System.Drawing.Point(17, 47);
             this.wojna.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wojna.Name = "wojna";
             this.wojna.Size = new System.Drawing.Size(113, 29);
@@ -53,7 +57,7 @@
             this.wojna.TabStop = true;
             this.wojna.Text = "WOJNA";
             this.wojna.UseVisualStyleBackColor = true;
-            this.wojna.CheckedChanged += new System.EventHandler(this.wojna_CheckedChanged_1);
+            this.wojna.CheckedChanged += new System.EventHandler(this.wojna_CheckedChanged);
             // 
             // oczko
             // 
@@ -86,10 +90,9 @@
             this.playButton.Size = new System.Drawing.Size(78, 49);
             this.playButton.TabIndex = 3;
             this.playButton.Text = "PLAY";
-            this.playButton.UseVisualStyleBackColor = false;
-            this.playButton.Click += new System.EventHandler(this.playButton_Click);
+            this.playButton.UseVisualStyleBackColor = true;
             // 
-            // lblPlayer1Card
+            // restartButton
             // 
             this.restartButton.Location = new System.Drawing.Point(119, 166);
             this.restartButton.Name = "restartButton";
@@ -98,7 +101,7 @@
             this.restartButton.Text = "RESTART";
             this.restartButton.UseVisualStyleBackColor = true;
             // 
-            // txtPlayer1Cards
+            // playerCardPictureBox
             // 
             this.playerCardPictureBox.Location = new System.Drawing.Point(458, 84);
             this.playerCardPictureBox.Name = "playerCardPictureBox";
@@ -107,7 +110,7 @@
             this.playerCardPictureBox.TabIndex = 5;
             this.playerCardPictureBox.TabStop = false;
             // 
-            // txtPlayer2Cards
+            // computerCardPictureBox
             // 
             this.computerCardPictureBox.Location = new System.Drawing.Point(270, 84);
             this.computerCardPictureBox.Name = "computerCardPictureBox";
@@ -116,7 +119,7 @@
             this.computerCardPictureBox.TabIndex = 6;
             this.computerCardPictureBox.TabStop = false;
             // 
-            // lblPlayer2Card
+            // playerWarCardPictureBox
             // 
             this.playerWarCardPictureBox.Location = new System.Drawing.Point(36, 287);
             this.playerWarCardPictureBox.Name = "playerWarCardPictureBox";
@@ -124,7 +127,7 @@
             this.playerWarCardPictureBox.TabIndex = 7;
             this.playerWarCardPictureBox.TabStop = false;
             // 
-            // lblWarInfo
+            // computerWarCardPictureBox
             // 
             this.computerWarCardPictureBox.Location = new System.Drawing.Point(139, 220);
             this.computerWarCardPictureBox.Name = "computerWarCardPictureBox";
@@ -132,7 +135,7 @@
             this.computerWarCardPictureBox.TabIndex = 8;
             this.computerWarCardPictureBox.TabStop = false;
             // 
-            // kartyys
+            // playerCardsLabel
             // 
             this.playerCardsLabel.AutoSize = true;
             this.playerCardsLabel.Location = new System.Drawing.Point(273, 407);
@@ -141,7 +144,7 @@
             this.playerCardsLabel.TabIndex = 9;
             this.playerCardsLabel.Text = "Player Cards";
             // 
-            // kyst
+            // computerCardsLabel
             // 
             this.computerCardsLabel.AutoSize = true;
             this.computerCardsLabel.Location = new System.Drawing.Point(455, 407);
@@ -170,7 +173,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "WOJNA LUB OCZKO ;)";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.playerCardPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.computerCardPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerWarCardPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.computerWarCardPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,13 +188,13 @@
         private System.Windows.Forms.RadioButton oczko;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button playButton;
-        private System.Windows.Forms.Label lblPlayer1Card;
-        private System.Windows.Forms.TextBox txtPlayer1Cards;
-        private System.Windows.Forms.TextBox txtPlayer2Cards;
-        private System.Windows.Forms.Label lblPlayer2Card;
-        private System.Windows.Forms.Label lblWarInfo;
-        private System.Windows.Forms.Label kartyys;
-        private System.Windows.Forms.Label kyst;
+        private System.Windows.Forms.Button restartButton;
+        private System.Windows.Forms.PictureBox playerCardPictureBox;
+        private System.Windows.Forms.PictureBox computerCardPictureBox;
+        private System.Windows.Forms.PictureBox playerWarCardPictureBox;
+        private System.Windows.Forms.PictureBox computerWarCardPictureBox;
+        private System.Windows.Forms.Label playerCardsLabel;
+        private System.Windows.Forms.Label computerCardsLabel;
     }
 }
 
