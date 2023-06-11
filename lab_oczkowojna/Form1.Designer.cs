@@ -140,7 +140,7 @@
             this.playerCardsLabel.AutoSize = true;
             this.playerCardsLabel.Location = new System.Drawing.Point(273, 407);
             this.playerCardsLabel.Name = "playerCardsLabel";
-            this.playerCardsLabel.Size = new System.Drawing.Size(85, 16);
+            this.playerCardsLabel.Size = new System.Drawing.Size(98, 20);
             this.playerCardsLabel.TabIndex = 9;
             this.playerCardsLabel.Text = "Player Cards";
             // 
@@ -149,7 +149,7 @@
             this.computerCardsLabel.AutoSize = true;
             this.computerCardsLabel.Location = new System.Drawing.Point(455, 407);
             this.computerCardsLabel.Name = "computerCardsLabel";
-            this.computerCardsLabel.Size = new System.Drawing.Size(101, 16);
+            this.computerCardsLabel.Size = new System.Drawing.Size(121, 20);
             this.computerCardsLabel.TabIndex = 10;
             this.computerCardsLabel.Text = "ComputerCards";
             // 
