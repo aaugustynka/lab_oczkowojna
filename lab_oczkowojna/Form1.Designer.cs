@@ -45,11 +45,7 @@
             // 
             this.wojna.AutoSize = true;
             this.wojna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-<<<<<<< HEAD
-            this.wojna.Location = new System.Drawing.Point(19, 59);
-=======
             this.wojna.Location = new System.Drawing.Point(17, 43);
->>>>>>> 7d3ce07053cf8128f51129400670437974f5252d
             this.wojna.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wojna.Name = "wojna";
             this.wojna.Size = new System.Drawing.Size(113, 29);
@@ -85,18 +81,9 @@
             // 
             // playButton
             // 
-<<<<<<< HEAD
-            this.playButton.Location = new System.Drawing.Point(181, 139);
-            this.playButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.playButton.Location = new System.Drawing.Point(161, 111);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(88, 61);
-=======
-            this.playButton.BackColor = System.Drawing.Color.Plum;
-            this.playButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.playButton.Location = new System.Drawing.Point(164, 47);
-            this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(127, 48);
->>>>>>> 7d3ce07053cf8128f51129400670437974f5252d
+            this.playButton.Size = new System.Drawing.Size(78, 49);
             this.playButton.TabIndex = 3;
             this.playButton.Text = "PLAY";
             this.playButton.UseVisualStyleBackColor = false;
@@ -104,145 +91,71 @@
             // 
             // lblPlayer1Card
             // 
-<<<<<<< HEAD
-            this.restartButton.Location = new System.Drawing.Point(134, 208);
-            this.restartButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.restartButton.Location = new System.Drawing.Point(119, 166);
             this.restartButton.Name = "restartButton";
-            this.restartButton.Size = new System.Drawing.Size(135, 39);
+            this.restartButton.Size = new System.Drawing.Size(120, 31);
             this.restartButton.TabIndex = 4;
             this.restartButton.Text = "RESTART";
             this.restartButton.UseVisualStyleBackColor = true;
-=======
-            this.lblPlayer1Card.AutoSize = true;
-            this.lblPlayer1Card.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPlayer1Card.Location = new System.Drawing.Point(344, 110);
-            this.lblPlayer1Card.Name = "lblPlayer1Card";
-            this.lblPlayer1Card.Size = new System.Drawing.Size(78, 20);
-            this.lblPlayer1Card.TabIndex = 11;
-            this.lblPlayer1Card.Text = "Player 1";
-            this.lblPlayer1Card.Click += new System.EventHandler(this.lblPlayer1Card_Click);
->>>>>>> 7d3ce07053cf8128f51129400670437974f5252d
             // 
             // txtPlayer1Cards
             // 
-<<<<<<< HEAD
-            this.playerCardPictureBox.Location = new System.Drawing.Point(515, 105);
-            this.playerCardPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.playerCardPictureBox.Location = new System.Drawing.Point(458, 84);
             this.playerCardPictureBox.Name = "playerCardPictureBox";
-            this.playerCardPictureBox.Size = new System.Drawing.Size(189, 385);
+            this.playerCardPictureBox.Size = new System.Drawing.Size(168, 308);
             this.playerCardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.playerCardPictureBox.TabIndex = 5;
             this.playerCardPictureBox.TabStop = false;
-=======
-            this.txtPlayer1Cards.Location = new System.Drawing.Point(348, 133);
-            this.txtPlayer1Cards.Name = "txtPlayer1Cards";
-            this.txtPlayer1Cards.Size = new System.Drawing.Size(228, 22);
-            this.txtPlayer1Cards.TabIndex = 13;
-            this.txtPlayer1Cards.TextChanged += new System.EventHandler(this.txtPlayer1Cards_TextChanged);
->>>>>>> 7d3ce07053cf8128f51129400670437974f5252d
             // 
             // txtPlayer2Cards
             // 
-<<<<<<< HEAD
-            this.computerCardPictureBox.Location = new System.Drawing.Point(304, 105);
-            this.computerCardPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.computerCardPictureBox.Location = new System.Drawing.Point(270, 84);
             this.computerCardPictureBox.Name = "computerCardPictureBox";
-            this.computerCardPictureBox.Size = new System.Drawing.Size(189, 385);
+            this.computerCardPictureBox.Size = new System.Drawing.Size(168, 308);
             this.computerCardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.computerCardPictureBox.TabIndex = 6;
             this.computerCardPictureBox.TabStop = false;
-=======
-            this.txtPlayer2Cards.Location = new System.Drawing.Point(649, 133);
-            this.txtPlayer2Cards.Name = "txtPlayer2Cards";
-            this.txtPlayer2Cards.Size = new System.Drawing.Size(234, 22);
-            this.txtPlayer2Cards.TabIndex = 14;
-            this.txtPlayer2Cards.TextChanged += new System.EventHandler(this.txtPlayer2Cards_TextChanged);
->>>>>>> 7d3ce07053cf8128f51129400670437974f5252d
             // 
             // lblPlayer2Card
             // 
-<<<<<<< HEAD
-            this.playerWarCardPictureBox.Location = new System.Drawing.Point(40, 359);
-            this.playerWarCardPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.playerWarCardPictureBox.Location = new System.Drawing.Point(36, 287);
             this.playerWarCardPictureBox.Name = "playerWarCardPictureBox";
-            this.playerWarCardPictureBox.Size = new System.Drawing.Size(228, 84);
+            this.playerWarCardPictureBox.Size = new System.Drawing.Size(203, 67);
             this.playerWarCardPictureBox.TabIndex = 7;
             this.playerWarCardPictureBox.TabStop = false;
-=======
-            this.lblPlayer2Card.AutoSize = true;
-            this.lblPlayer2Card.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblPlayer2Card.Location = new System.Drawing.Point(645, 110);
-            this.lblPlayer2Card.Name = "lblPlayer2Card";
-            this.lblPlayer2Card.Size = new System.Drawing.Size(78, 20);
-            this.lblPlayer2Card.TabIndex = 12;
-            this.lblPlayer2Card.Text = "Player 2";
-            this.lblPlayer2Card.Click += new System.EventHandler(this.lblPlayer2Card_Click);
->>>>>>> 7d3ce07053cf8128f51129400670437974f5252d
             // 
             // lblWarInfo
             // 
-<<<<<<< HEAD
-            this.computerWarCardPictureBox.Location = new System.Drawing.Point(156, 275);
-            this.computerWarCardPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.computerWarCardPictureBox.Location = new System.Drawing.Point(139, 220);
             this.computerWarCardPictureBox.Name = "computerWarCardPictureBox";
-            this.computerWarCardPictureBox.Size = new System.Drawing.Size(112, 62);
+            this.computerWarCardPictureBox.Size = new System.Drawing.Size(100, 50);
             this.computerWarCardPictureBox.TabIndex = 8;
             this.computerWarCardPictureBox.TabStop = false;
-=======
-            this.lblWarInfo.AutoSize = true;
-            this.lblWarInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblWarInfo.Location = new System.Drawing.Point(590, 47);
-            this.lblWarInfo.Name = "lblWarInfo";
-            this.lblWarInfo.Size = new System.Drawing.Size(0, 25);
-            this.lblWarInfo.TabIndex = 15;
-            this.lblWarInfo.Click += new System.EventHandler(this.lblWarInfo_Click);
->>>>>>> 7d3ce07053cf8128f51129400670437974f5252d
             // 
             // kartyys
             // 
-<<<<<<< HEAD
             this.playerCardsLabel.AutoSize = true;
-            this.playerCardsLabel.Location = new System.Drawing.Point(307, 509);
+            this.playerCardsLabel.Location = new System.Drawing.Point(273, 407);
             this.playerCardsLabel.Name = "playerCardsLabel";
-            this.playerCardsLabel.Size = new System.Drawing.Size(98, 20);
+            this.playerCardsLabel.Size = new System.Drawing.Size(85, 16);
             this.playerCardsLabel.TabIndex = 9;
             this.playerCardsLabel.Text = "Player Cards";
-=======
-            this.kartyys.AutoSize = true;
-            this.kartyys.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kartyys.Location = new System.Drawing.Point(345, 158);
-            this.kartyys.Name = "kartyys";
-            this.kartyys.Size = new System.Drawing.Size(126, 18);
-            this.kartyys.TabIndex = 16;
-            this.kartyys.Text = "Pozostałe karty";
->>>>>>> 7d3ce07053cf8128f51129400670437974f5252d
             // 
             // kyst
             // 
-<<<<<<< HEAD
             this.computerCardsLabel.AutoSize = true;
-            this.computerCardsLabel.Location = new System.Drawing.Point(512, 509);
+            this.computerCardsLabel.Location = new System.Drawing.Point(455, 407);
             this.computerCardsLabel.Name = "computerCardsLabel";
-            this.computerCardsLabel.Size = new System.Drawing.Size(121, 20);
+            this.computerCardsLabel.Size = new System.Drawing.Size(101, 16);
             this.computerCardsLabel.TabIndex = 10;
             this.computerCardsLabel.Text = "ComputerCards";
-=======
-            this.kyst.AutoSize = true;
-            this.kyst.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.kyst.Location = new System.Drawing.Point(646, 158);
-            this.kyst.Name = "kyst";
-            this.kyst.Size = new System.Drawing.Size(126, 18);
-            this.kyst.TabIndex = 17;
-            this.kyst.Text = "Pozostałe karty";
->>>>>>> 7d3ce07053cf8128f51129400670437974f5252d
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1659, 1050);
+            this.ClientSize = new System.Drawing.Size(1475, 990);
             this.Controls.Add(this.computerCardsLabel);
             this.Controls.Add(this.playerCardsLabel);
             this.Controls.Add(this.computerWarCardPictureBox);
@@ -250,16 +163,6 @@
             this.Controls.Add(this.computerCardPictureBox);
             this.Controls.Add(this.playerCardPictureBox);
             this.Controls.Add(this.restartButton);
-=======
-            this.ClientSize = new System.Drawing.Size(1475, 990);
-            this.Controls.Add(this.kyst);
-            this.Controls.Add(this.kartyys);
-            this.Controls.Add(this.lblWarInfo);
-            this.Controls.Add(this.txtPlayer2Cards);
-            this.Controls.Add(this.txtPlayer1Cards);
-            this.Controls.Add(this.lblPlayer2Card);
-            this.Controls.Add(this.lblPlayer1Card);
->>>>>>> 7d3ce07053cf8128f51129400670437974f5252d
             this.Controls.Add(this.playButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.oczko);
