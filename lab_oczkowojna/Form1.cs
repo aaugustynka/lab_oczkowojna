@@ -232,6 +232,18 @@ namespace lab_oczkowojna
         {
            
         }
+
+        private void oczko_CheckedChanged(object sender, EventArgs e)
+        {
+            if (oczko.Checked)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
     }
 
     public class Card

@@ -49,10 +49,10 @@
             // 
             this.wojna.AutoSize = true;
             this.wojna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.wojna.Location = new System.Drawing.Point(17, 47);
+            this.wojna.Location = new System.Drawing.Point(19, 59);
             this.wojna.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.wojna.Name = "wojna";
-            this.wojna.Size = new System.Drawing.Size(91, 24);
+            this.wojna.Size = new System.Drawing.Size(113, 29);
             this.wojna.TabIndex = 0;
             this.wojna.TabStop = true;
             this.wojna.Text = "WOJNA";
@@ -63,101 +63,108 @@
             // 
             this.oczko.AutoSize = true;
             this.oczko.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.oczko.Location = new System.Drawing.Point(17, 71);
+            this.oczko.Location = new System.Drawing.Point(19, 89);
             this.oczko.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.oczko.Name = "oczko";
-            this.oczko.Size = new System.Drawing.Size(88, 24);
+            this.oczko.Size = new System.Drawing.Size(111, 29);
             this.oczko.TabIndex = 1;
             this.oczko.TabStop = true;
             this.oczko.Text = "OCZKO";
             this.oczko.UseVisualStyleBackColor = true;
+            this.oczko.CheckedChanged += new System.EventHandler(this.oczko_CheckedChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(14, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 25);
+            this.label1.Size = new System.Drawing.Size(152, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Wybierz grę";
             // 
             // playButton
             // 
-            this.playButton.Location = new System.Drawing.Point(161, 111);
+            this.playButton.Location = new System.Drawing.Point(181, 139);
+            this.playButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.playButton.Name = "playButton";
-            this.playButton.Size = new System.Drawing.Size(78, 49);
+            this.playButton.Size = new System.Drawing.Size(88, 61);
             this.playButton.TabIndex = 3;
             this.playButton.Text = "PLAY";
             this.playButton.UseVisualStyleBackColor = true;
             // 
             // restartButton
             // 
-            this.restartButton.Location = new System.Drawing.Point(119, 166);
+            this.restartButton.Location = new System.Drawing.Point(134, 208);
+            this.restartButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.restartButton.Name = "restartButton";
-            this.restartButton.Size = new System.Drawing.Size(120, 31);
+            this.restartButton.Size = new System.Drawing.Size(135, 39);
             this.restartButton.TabIndex = 4;
             this.restartButton.Text = "RESTART";
             this.restartButton.UseVisualStyleBackColor = true;
             // 
             // playerCardPictureBox
             // 
-            this.playerCardPictureBox.Location = new System.Drawing.Point(458, 84);
+            this.playerCardPictureBox.Location = new System.Drawing.Point(515, 105);
+            this.playerCardPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.playerCardPictureBox.Name = "playerCardPictureBox";
-            this.playerCardPictureBox.Size = new System.Drawing.Size(168, 308);
+            this.playerCardPictureBox.Size = new System.Drawing.Size(189, 385);
             this.playerCardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.playerCardPictureBox.TabIndex = 5;
             this.playerCardPictureBox.TabStop = false;
             // 
             // computerCardPictureBox
             // 
-            this.computerCardPictureBox.Location = new System.Drawing.Point(270, 84);
+            this.computerCardPictureBox.Location = new System.Drawing.Point(304, 105);
+            this.computerCardPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.computerCardPictureBox.Name = "computerCardPictureBox";
-            this.computerCardPictureBox.Size = new System.Drawing.Size(168, 308);
+            this.computerCardPictureBox.Size = new System.Drawing.Size(189, 385);
             this.computerCardPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.computerCardPictureBox.TabIndex = 6;
             this.computerCardPictureBox.TabStop = false;
             // 
             // playerWarCardPictureBox
             // 
-            this.playerWarCardPictureBox.Location = new System.Drawing.Point(36, 287);
+            this.playerWarCardPictureBox.Location = new System.Drawing.Point(40, 359);
+            this.playerWarCardPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.playerWarCardPictureBox.Name = "playerWarCardPictureBox";
-            this.playerWarCardPictureBox.Size = new System.Drawing.Size(203, 67);
+            this.playerWarCardPictureBox.Size = new System.Drawing.Size(228, 84);
             this.playerWarCardPictureBox.TabIndex = 7;
             this.playerWarCardPictureBox.TabStop = false;
             // 
             // computerWarCardPictureBox
             // 
-            this.computerWarCardPictureBox.Location = new System.Drawing.Point(139, 220);
+            this.computerWarCardPictureBox.Location = new System.Drawing.Point(156, 275);
+            this.computerWarCardPictureBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.computerWarCardPictureBox.Name = "computerWarCardPictureBox";
-            this.computerWarCardPictureBox.Size = new System.Drawing.Size(100, 50);
+            this.computerWarCardPictureBox.Size = new System.Drawing.Size(112, 62);
             this.computerWarCardPictureBox.TabIndex = 8;
             this.computerWarCardPictureBox.TabStop = false;
             // 
             // playerCardsLabel
             // 
             this.playerCardsLabel.AutoSize = true;
-            this.playerCardsLabel.Location = new System.Drawing.Point(273, 407);
+            this.playerCardsLabel.Location = new System.Drawing.Point(307, 509);
             this.playerCardsLabel.Name = "playerCardsLabel";
-            this.playerCardsLabel.Size = new System.Drawing.Size(85, 16);
+            this.playerCardsLabel.Size = new System.Drawing.Size(98, 20);
             this.playerCardsLabel.TabIndex = 9;
             this.playerCardsLabel.Text = "Player Cards";
             // 
             // computerCardsLabel
             // 
             this.computerCardsLabel.AutoSize = true;
-            this.computerCardsLabel.Location = new System.Drawing.Point(455, 407);
+            this.computerCardsLabel.Location = new System.Drawing.Point(512, 509);
             this.computerCardsLabel.Name = "computerCardsLabel";
-            this.computerCardsLabel.Size = new System.Drawing.Size(101, 16);
+            this.computerCardsLabel.Size = new System.Drawing.Size(121, 20);
             this.computerCardsLabel.TabIndex = 10;
             this.computerCardsLabel.Text = "ComputerCards";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Thistle;
-            this.ClientSize = new System.Drawing.Size(1475, 990);
+            this.ClientSize = new System.Drawing.Size(1659, 1050);
             this.Controls.Add(this.computerCardsLabel);
             this.Controls.Add(this.playerCardsLabel);
             this.Controls.Add(this.computerWarCardPictureBox);
@@ -169,6 +176,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.oczko);
             this.Controls.Add(this.wojna);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "WOJNA LUB OCZKO ;)";
             ((System.ComponentModel.ISupportInitialize)(this.playerCardPictureBox)).EndInit();
