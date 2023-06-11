@@ -23,6 +23,8 @@ namespace lab_oczkowojna
             txtPlayer1Cards.Hide();
             txtPlayer2Cards.Hide();
             lblWarInfo.Hide();
+            lblPlayer2Cards.Hide();
+            lblPlayer1Cards.Hide();
             wojna.Checked = false;
         }
         private void wojna_CheckedChanged(object sender, EventArgs e)
@@ -35,6 +37,8 @@ namespace lab_oczkowojna
                 txtPlayer1Cards.Show();
                 txtPlayer2Cards.Show();
                 lblWarInfo.Show();
+                lblPlayer2Cards.Show();
+                lblPlayer1Cards.Show();
 
             }
             else
@@ -45,6 +49,8 @@ namespace lab_oczkowojna
                 txtPlayer1Cards.Hide();
                 txtPlayer2Cards.Hide();
                 lblWarInfo.Hide();
+                lblPlayer2Cards.Hide();
+                lblPlayer1Cards.Hide();
             }
         }
 
