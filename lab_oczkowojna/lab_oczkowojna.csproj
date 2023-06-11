@@ -98,70 +98,150 @@
     <Content Include="images\2_of_diamonds.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\2_of_hearts.png" />
-    <Content Include="images\2_of_spades.png" />
-    <Content Include="images\3_of_clubs.png" />
-    <Content Include="images\3_of_diamonds.png" />
-    <Content Include="images\3_of_hearts.png" />
-    <Content Include="images\3_of_spades.png" />
-    <Content Include="images\4_of_clubs.png" />
-    <Content Include="images\4_of_diamonds.png" />
-    <Content Include="images\4_of_hearts.png" />
-    <Content Include="images\4_of_spades.png" />
-    <Content Include="images\5_of_clubs.png" />
-    <Content Include="images\5_of_diamonds.png" />
-    <Content Include="images\5_of_hearts.png" />
-    <Content Include="images\5_of_spades.png" />
-    <Content Include="images\6_of_clubs.png" />
-    <Content Include="images\6_of_diamonds.png" />
-    <Content Include="images\6_of_hearts.png" />
-    <Content Include="images\6_of_spades.png" />
-    <Content Include="images\7_of_clubs.png" />
-    <Content Include="images\7_of_diamonds.png" />
-    <Content Include="images\7_of_hearts.png" />
-    <Content Include="images\7_of_spades.png" />
-    <Content Include="images\8_of_clubs.png" />
-    <Content Include="images\8_of_diamonds.png" />
-    <Content Include="images\8_of_hearts.png" />
-    <Content Include="images\8_of_spades.png" />
-    <Content Include="images\9_of_clubs.png" />
-    <Content Include="images\9_of_diamonds.png" />
-    <Content Include="images\9_of_hearts.png" />
-    <Content Include="images\9_of_spades.png" />
-    <Content Include="images\ace_of_clubs.png" />
-    <Content Include="images\ace_of_diamonds.png" />
-    <Content Include="images\ace_of_hearts.png" />
-    <Content Include="images\ace_of_spades.png" />
-    <Content Include="images\ace_of_spades2.png" />
-    <Content Include="images\black_joker.png" />
+    <Content Include="images\2_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\2_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\3_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\3_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\3_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\3_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\4_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\4_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\4_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\4_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\5_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\5_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\5_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\5_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\6_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\6_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\6_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\6_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\7_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\7_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\7_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\7_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\8_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\8_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\8_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\8_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\9_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\9_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\9_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\9_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\ace_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\ace_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\ace_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\ace_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\black_joker.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\card_back.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="images\jack_of_clubs.png" />
-    <Content Include="images\jack_of_clubs2.png" />
-    <Content Include="images\jack_of_diamonds.png" />
-    <Content Include="images\jack_of_diamonds2.png" />
-    <Content Include="images\jack_of_hearts.png" />
-    <Content Include="images\jack_of_hearts2.png" />
-    <Content Include="images\jack_of_spades.png" />
-    <Content Include="images\jack_of_spades2.png" />
-    <Content Include="images\king_of_clubs.png" />
-    <Content Include="images\king_of_clubs2.png" />
-    <Content Include="images\king_of_diamonds.png" />
-    <Content Include="images\king_of_diamonds2.png" />
-    <Content Include="images\king_of_hearts.png" />
-    <Content Include="images\king_of_hearts2.png" />
-    <Content Include="images\king_of_spades.png" />
-    <Content Include="images\king_of_spades2.png" />
-    <Content Include="images\queen_of_clubs.png" />
-    <Content Include="images\queen_of_clubs2.png" />
-    <Content Include="images\queen_of_diamonds.png" />
-    <Content Include="images\queen_of_diamonds2.png" />
-    <Content Include="images\queen_of_hearts.png" />
-    <Content Include="images\queen_of_hearts2.png" />
-    <Content Include="images\queen_of_spades.png" />
-    <Content Include="images\queen_of_spades2.png" />
-    <Content Include="images\red_joker.png" />
+    <Content Include="images\jack_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\jack_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\jack_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\jack_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\king_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\king_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\king_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\king_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\queen_of_clubs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\queen_of_diamonds.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\queen_of_hearts.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\queen_of_spades.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
