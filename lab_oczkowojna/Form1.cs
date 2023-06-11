@@ -148,7 +148,10 @@ namespace lab_oczkowojna
         }
         private void PlayOczkoGame()
         {
-            // Implementuj logikę gry w Oczko
+            lblPlayer1Card.Text=" ";
+            lblPlayer2Card.Text=" ";
+            txtPlayer1Cards.Text=" ";
+            txtPlayer2Cards.Text=" ";
             while (true)
             {
                 int player1Score = CalculateOczkoScore(playero1Cards);
@@ -169,7 +172,6 @@ namespace lab_oczkowojna
                // stopButton.Click += stopButton_Click;
               //  addCardButton.Click += addCardButton_Click;
 
-                // Oczekuj na akcję użytkownika (kliknięcie przycisku "Stop" lub "Dodaj kartę")
                 Application.DoEvents();
             }
         }
