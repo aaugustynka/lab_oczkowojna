@@ -60,7 +60,6 @@ namespace lab_oczkowojna
         }
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // Dispose resources and close the application gracefully
             Application.Exit();
         }
 
