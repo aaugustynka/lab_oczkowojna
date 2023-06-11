@@ -13,11 +13,16 @@ namespace lab_oczkowojna
         private List<string> player2Cards;
         private bool isWarGame;
 
+        private List<string> playero1Cards;
+        private List<string> playero2Cards;
+
         public Form1()
         {
             InitializeComponent();
 
             playButton.Hide();
+            addCardButton.Hide();
+            stopButton.Hide();
             lblPlayer1Card.Hide();
             lblPlayer2Card.Hide();
             txtPlayer1Cards.Hide();
@@ -53,6 +58,12 @@ namespace lab_oczkowojna
                 lblPlayer1Cards.Hide();
             }
         }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Dispose resources and close the application gracefully
+            Application.Exit();
+        }
+
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
@@ -63,6 +74,7 @@ namespace lab_oczkowojna
             ShuffleDeck();
 
 
+            this.FormClosing += Form1_FormClosing;
 
 
         }
@@ -98,6 +110,8 @@ namespace lab_oczkowojna
 
         private void playButton_Click(object sender, EventArgs e)
         {
+            InitializeDeck();
+            ShuffleDeck();
             if (wojna.Checked)
             {
                 isWarGame = true;
@@ -114,14 +128,77 @@ namespace lab_oczkowojna
 
             player1Cards = new List<string>();
             player2Cards = new List<string>();
+            playero1Cards = new List<string>();
+            playero2Cards = new List<string>();
 
             DealCards();
 
-            wojna.Enabled = false;
+            //wojna.Enabled = false;
 
             UpdateUI();
 
+            if (isWarGame)
+            {
             PlayGame();
+
+            }
+            else
+            {
+                PlayOczkoGame();
+            }
+        }
+        private void PlayOczkoGame()
+        {
+            // Implementuj logikę gry w Oczko
+            while (true)
+            {
+                int player1Score = CalculateOczkoScore(playero1Cards);
+                int player2Score = CalculateOczkoScore(playero2Cards);
+
+                if (player1Score >= 21 || player2Score >= 21)
+                {
+                    EndGame(player1Score, player2Score);
+                    break;
+                }
+
+               // stopButton.Visible = true;
+              //  addCardButton.Visible = true;
+
+                stopButton.Enabled = true;
+                addCardButton.Enabled = true;
+
+               // stopButton.Click += stopButton_Click;
+              //  addCardButton.Click += addCardButton_Click;
+
+                // Oczekuj na akcję użytkownika (kliknięcie przycisku "Stop" lub "Dodaj kartę")
+                Application.DoEvents();
+            }
+        }
+
+
+        private int CalculateOczkoScore(List<string> cards)
+        {
+            int score = 0;
+
+            foreach (string card in cards)
+            {
+                string rank = card.Substring(0, card.IndexOf("_of"));
+
+                if (rank == "ace")
+                {
+                    score += 11;
+                }
+                else if (rank == "king" || rank == "queen" || rank == "jack")
+                {
+                    score += 10;
+                }
+                else
+                {
+                    score += int.Parse(rank);
+                }
+            }
+
+            return score;
         }
 
         private void DealCards()
@@ -174,6 +251,7 @@ namespace lab_oczkowojna
             // Koniec gry
             string winner = (player1Cards.Count > player2Cards.Count) ? "Gracz 1" : "Gracz 2";
             MessageBox.Show($"Koniec gry! {winner} wygrał!");
+            
         }
 
 
@@ -261,6 +339,14 @@ namespace lab_oczkowojna
             lblPlayer1Card.Text = (player1Cards.Count > 0) ? player1Cards[0] : "Brak";
             lblPlayer2Card.Text = (player2Cards.Count > 0) ? player2Cards[0] : "Brak";
         }
+        private void UpdateUIo()
+        {
+            txtPlayer1Cards.Text =CalculateOczkoScore(playero1Cards).ToString();
+            txtPlayer2Cards.Text = CalculateOczkoScore(playero2Cards).ToString();
+
+            lblPlayer1Card.Text = (playero1Cards.Count > 0) ? playero1Cards[0] : "Brak";
+            lblPlayer2Card.Text = (playero2Cards.Count > 0) ? playero2Cards[0] : "Brak";
+        }
 
 
         private void txtPlayer1Cards_TextChanged(object sender, EventArgs e)
@@ -295,6 +381,131 @@ namespace lab_oczkowojna
 
         private void lblPlayer2Card_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void oczko_CheckedChanged(object sender, EventArgs e)
+        {
+            if (oczko.Checked)
+            {
+                playButton.Show();
+                lblPlayer1Card.Show();
+                lblPlayer2Card.Show();
+                txtPlayer1Cards.Show();
+                txtPlayer2Cards.Show();
+                lblWarInfo.Show();
+                lblPlayer2Cards.Show();
+                lblPlayer1Cards.Show();
+                addCardButton.Show();
+                stopButton.Show();
+            }
+            else
+            {
+                playButton.Hide();
+                lblPlayer1Card.Hide();
+                lblPlayer2Card.Hide();
+                txtPlayer1Cards.Hide();
+                txtPlayer2Cards.Hide();
+                lblWarInfo.Hide();
+                lblPlayer2Cards.Hide();
+                lblPlayer1Cards.Hide();
+                addCardButton.Hide();
+                stopButton.Hide();
+            }
+
+        }
+        private void stopButton_Click(object sender, EventArgs e)
+        {
+            stopButton.Enabled = false;
+            addCardButton.Enabled = false;
+
+            int player1Score = CalculateOczkoScore(playero1Cards);
+            int player2Score = CalculateOczkoScore(playero2Cards);
+
+            UpdateUIo();
+
+            EndGame(player1Score, player2Score);
+        }
+
+        private void addCardButton_Click(object sender, EventArgs e)
+        {
+            if (playero1Cards.Count < 3 && playero2Cards.Count < 3)
+            {
+                string newCard = deck[0];
+                playero1Cards.Insert(0,newCard);
+                deck.RemoveAt(0);
+
+                newCard = deck[0];
+                playero2Cards.Insert(0,newCard);
+                deck.RemoveAt(0);
+
+                int player1Score = CalculateOczkoScore(playero1Cards);
+                int player2Score = CalculateOczkoScore(playero2Cards);
+
+                if (player1Score >= 21 || player2Score >= 21)
+                {
+                    EndGame(player1Score, player2Score);
+                }
+
+                UpdateUIo();
+            }
+        }
+
+        private void EndGame(int player1Score, int player2Score)
+        {
+            stopButton.Enabled = false;
+            addCardButton.Enabled = false;
+            UpdateUIo();
+
+            string winner;
+            if (player1Score == player2Score)
+            {
+                winner = "Remis";
+            }
+            else if (player1Score > 21 && player2Score > 21)
+            {
+                winner = "Brak - obaj gracze przekroczyli 21";
+            }
+            else if (player1Score > 21)
+            {
+                winner = "Gracz 2";
+            }
+            else if (player2Score > 21)
+            {
+                winner = "Gracz 1";
+            }
+            else if (player1Score > player2Score)
+            {
+                winner = "Gracz 1";
+            }
+            else
+            {
+                winner = "Gracz 2";
+            }
+
+            if (winner=="Remis")
+            {
+             
+            }
+            else
+            {
+                MessageBox.Show($"Koniec gry! Zwycięzca: {winner}\n\nGracz 1: {player1Score}, Gracz 2: {player2Score}");
+            }
+
+            // Wyzeruj stan gry
+            deck.Clear();
+            playero1Cards.Clear();
+            playero2Cards.Clear();
+
+            InitializeDeck();
+            ShuffleDeck();
+            UpdateUIo();
+
+            wojna.Checked = false;
+            oczko.Checked = false;
+
+            //stopButton.Visible = false;
+            //addCardButton.Visible = false;
 
         }
 
