@@ -1,316 +1,287 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace lab_oczkowojna
 {
     public partial class Form1 : Form
     {
-        private List<Card> playerDeck;
-        private List<Card> computerDeck;
-        private List<Card> warCards;
-        private Random random;
-        private bool gameStarted;
-
+        private List<string> deck;
+        private List<string> player1Cards;
+        private List<string> player2Cards;
+        private bool isWarGame;
 
         public Form1()
         {
             InitializeComponent();
-            InitializeGame();
-        }
-
-        private void InitializeGame()
-        {
-
-                // Inicjalizacja talii kart
-                playerDeck = new List<Card>();
-                computerDeck = new List<Card>();
-                warCards = new List<Card>();
-                random = new Random();
-
-                // Utworzenie talii kart
-                var suits = Enum.GetValues(typeof(CardSuit));
-                var ranks = Enum.GetValues(typeof(CardRank));
-                foreach (CardSuit suit in suits)
-                {
-                    foreach (CardRank rank in ranks)
-                    {
-                        var card = new Card(rank, suit);
-                        playerDeck.Add(card);
-                    }
-                }
-
-                // Tasowanie talii kart
-                Shuffle(playerDeck);
-
-                // Podział talii kart pomiędzy gracza a komputer
-                int deckSize = playerDeck.Count;
-                int halfSize = deckSize / 2;
-                for (int i = 0; i < halfSize; i++)
-                {
-                    computerDeck.Add(playerDeck[i]);
-                }
-                for (int i = halfSize; i < deckSize; i++)
-                {
-                    playerDeck[i].IsFaceUp = true;
-                }
-
-                gameStarted = false;
             
+            playButton.Hide();
+            lblPlayer1Card.Hide();
+            lblPlayer2Card.Hide();
+            txtPlayer1Cards.Hide();
+            txtPlayer2Cards.Hide();
+            lblWarInfo.Hide();
+            wojna.Checked = false;
         }
-
-        private void Shuffle<T>(List<T> list)
+        private void wojna_CheckedChanged_1(object sender, EventArgs e)
         {
-            int n = list.Count;
-            while (n > 1)
+        if (wojna.Checked)
+        {
+              playButton.Show();
+              lblPlayer1Card.Show();
+              lblPlayer2Card.Show();
+              txtPlayer1Cards.Show();
+              txtPlayer2Cards.Show();
+              lblWarInfo.Show();
+
+        }
+        else
+        {
+                playButton.Hide();
+                lblPlayer1Card.Hide();
+                lblPlayer2Card.Hide();
+                txtPlayer1Cards.Hide();
+                txtPlayer2Cards.Hide();
+                lblWarInfo.Hide();
+        }
+    }
+
+    private void Form1_Load(object sender, EventArgs e)
+        {
+
+            wojna.Checked = false;
+            isWarGame = false; 
+            InitializeDeck();
+            ShuffleDeck();
+
+            
+
+
+        }
+private void InitializeDeck()
+        {
+            deck = new List<string>();
+
+            string[] shapes = { "spades", "hearts", "diamonds", "clubs" };
+            string[] figures = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace" };
+
+            foreach (string shape in shapes)
             {
-                n--;
-                int k = random.Next(n + 1);
-                T value = list[k];
-                list[k] = list[n];
-                list[n] = value;
+                foreach (string figure in figures)
+                {
+                    string card = $"{figure}_of_{shape}";
+                    deck.Add(card);
+                }
             }
         }
 
-
-        private void UpdateUI()
+        private void ShuffleDeck()
         {
-            playerCardsLabel.Text = $"Karty gracza: {playerDeck.Count}";
-            computerCardsLabel.Text = $"Karty komputera: {computerDeck.Count}";
-        }
+            Random random = new Random();
 
-        private void StartGame()
-        {
-            if (!gameStarted)
+            for (int i = 0; i < deck.Count; i++)
             {
-                gameStarted = true;
-                warCards.Clear();
-                playButton.Enabled = false;
-
-                if (playerDeck.Count == 0 || computerDeck.Count == 0)
-                {
-                    MessageBox.Show("Gra zakończona!", "Koniec gry");
-                    return;
-                }
-
-                var playerCard = playerDeck[0];
-                var computerCard = computerDeck[0];
-
-                playerDeck.RemoveAt(0);
-                computerDeck.RemoveAt(0);
-
-                playerCardPictureBox.Image = playerCard.GetCardImage();
-                computerCardPictureBox.Image = computerCard.GetCardImage();
-
-                if (wojna.Checked)
-                {
-                    if (playerCard.Rank > computerCard.Rank)
-                    {
-                        playerDeck.Add(playerCard);
-                        playerDeck.Add(computerCard);
-                    }
-                    else if (playerCard.Rank < computerCard.Rank)
-                    {
-                        computerDeck.Add(computerCard);
-                        computerDeck.Add(playerCard);
-                    }
-                    else
-                    {
-                        warCards.Add(playerCard);
-                        warCards.Add(computerCard);
-                        War();
-                    }
-                }
-                else
-                {
-                    if (playerCard.Rank != computerCard.Rank)
-                    {
-                        if (playerCard.Rank > computerCard.Rank)
-                        {
-                            playerDeck.Add(playerCard);
-                            playerDeck.Add(computerCard);
-                        }
-                        else
-                        {
-                            computerDeck.Add(computerCard);
-                            computerDeck.Add(playerCard);
-                        }
-                    }
-                    else
-                    {
-                        warCards.Add(playerCard);
-                        warCards.Add(computerCard);
-                        War();
-                    }
-                }
-
-                UpdateUI();
+                int randomIndex = random.Next(i, deck.Count);
+                string temp = deck[i];
+                deck[i] = deck[randomIndex];
+                deck[randomIndex] = temp;
             }
         }
 
-        private void War()
-        {
-            if (playerDeck.Count < 4 || computerDeck.Count < 4)
-            {
-                MessageBox.Show("Nie można kontynuować wojny, nie ma wystarczającej ilości kart!", "Koniec gry");
-                return;
-            }
-
-            for (int i = 0; i < 3; i++)
-            {
-                if (playerDeck.Count > 0)
-                {
-                    var playerWarCard = playerDeck[0];
-                    playerDeck.RemoveAt(0);
-                    warCards.Add(playerWarCard);
-                }
-
-                if (computerDeck.Count > 0)
-                {
-                    var computerWarCard = computerDeck[0];
-                    computerDeck.RemoveAt(0);
-                    warCards.Add(computerWarCard);
-                }
-            }
-
-            StartGame();
-        }
-
-        private void wojna_CheckedChanged(object sender, EventArgs e)
+        private void playButton_Click(object sender, EventArgs e)
         {
             if (wojna.Checked)
             {
-                warCards.Clear();
-                playerWarCardPictureBox.Image = null;
-                computerWarCardPictureBox.Image = null;
+                isWarGame = true;
             }
-        }
-
-        private void playButton_Click_1(object sender, EventArgs e)
-        {
-            StartGame();
-        }
-
-        private void restartButton_Click_1(object sender, EventArgs e)
-        {
-            InitializeGame();
-            playerCardPictureBox.Image = null;
-            computerCardPictureBox.Image = null;
-            playerWarCardPictureBox.Image = null;
-            computerWarCardPictureBox.Image = null;
-            playButton.Enabled = true;
-        }
-
-        private void playerCardPictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void playerWarCardPictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void computerWarPictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void playerCardsLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void computerCardsLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void oczko_CheckedChanged(object sender, EventArgs e)
-        {
-            if (oczko.Checked)
+            else if (oczko.Checked)
             {
-
+                isWarGame = false;
             }
             else
             {
-
+                MessageBox.Show("Wybierz rodzaj gry (wojna lub oczko).");
+                return;
             }
+
+            player1Cards = new List<string>();
+            player2Cards = new List<string>();
+
+            DealCards();
+
+           wojna.Enabled = false;
+
+            UpdateUI();
+
+            PlayGame();
         }
-    }
 
-    public class Card
-    {
-        public CardRank Rank { get; set; }
-        public CardSuit Suit { get; set; }
-        public bool IsFaceUp { get; set; }
-
-        public Card(CardRank rank, CardSuit suit)
+        private void DealCards()
         {
-            Rank = rank;
-            Suit = suit;
-            IsFaceUp = false;
+            int numCardsPerPlayer = deck.Count / 2;
+
+            for (int i = 0; i < numCardsPerPlayer; i++)
+            {
+                string card1 = deck[i];
+                string card2 = deck[i + numCardsPerPlayer];
+
+                player1Cards.Add(card1);
+                player2Cards.Add(card2);
+            }
         }
 
-        public Image GetCardImage()
+        private void PlayGame()
         {
-            string rankString = ((int)Rank).ToString();
-            switch (Rank)
+            while (player1Cards.Count > 0 && player2Cards.Count > 0)
             {
-                case CardRank.Jack:
-                    rankString = "jack";
-                    break;
-                case CardRank.Queen:
-                    rankString = "queen";
-                    break;
-                case CardRank.King:
-                    rankString = "king";
-                    break;
-                case CardRank.Ace:
-                    rankString = "ace";
-                    break;
+                string card1 = player1Cards[0];
+                string card2 = player2Cards[0];
+
+                player1Cards.RemoveAt(0);
+                player2Cards.RemoveAt(0);
+
+                int result = CompareCards(card1, card2);
+
+                if (result > 0)
+                {
+                    player1Cards.Add(card1);
+                    player1Cards.Add(card2);
+                }
+                else if (result < 0)
+                {
+                    player2Cards.Add(card1);
+                    player2Cards.Add(card2);
+                    lblWarInfo.Text = "";
+                }
+                else if (isWarGame)
+                {
+                    War(card1, card2);
+                }
+
+                UpdateUI();
+                Application.DoEvents();
+                System.Threading.Thread.Sleep(500);
             }
 
-            string imagePath = Path.Combine("images", $"{rankString}_of_{Suit.ToString().ToLower()}.png");
+            // Koniec gry
+            string winner = (player1Cards.Count > player2Cards.Count) ? "Gracz 1" : "Gracz 2";
+            MessageBox.Show($"Koniec gry! {winner} wygrał!");
+        }
 
-            byte[] imageBytes = File.ReadAllBytes(imagePath);
 
-            using (MemoryStream memoryStream = new MemoryStream(imageBytes))
+        private void War(string card1, string card2)
+        {
+            lblWarInfo.Text = "WOJNA!";
+            List<string> pot = new List<string>();
+            pot.Add(card1);
+            pot.Add(card2);
+
+            // Zagraj kolejne rundy wojny, aż jeden z graczy zdobędzie wygraną
+            while (true)
             {
-                return Image.FromStream(memoryStream);
+                // Sprawdź, czy gracze mają wystarczającą ilość kart na wojnę
+                if (player1Cards.Count < 4 || player2Cards.Count < 4)
+                {
+                    // Jeśli któremuś z graczy zabrakło kart, gra kończy się remisem
+                    // Można dodać obsługę takiego przypadku lub zastosować inną logikę
+                    break;
+                }
+
+                // Dodaj karty na wojnę do puli (stosu)
+                for (int i = 0; i < 3; i++)
+                {
+                    pot.Add(player1Cards[i]);
+                    pot.Add(player2Cards[i]);
+                }
+
+                player1Cards.RemoveRange(0, 3);
+                player2Cards.RemoveRange(0, 3);
+
+                string warCard1 = player1Cards[0];
+                string warCard2 = player2Cards[0];
+
+                int result = CompareCards(warCard1, warCard2);
+
+                if (result > 0)
+                {
+                    player1Cards.AddRange(pot);
+                    break;
+                }
+                else if (result < 0)
+                {
+                    player2Cards.AddRange(pot);
+                    break;
+                }
             }
         }
-    }
 
-    public enum CardSuit
-    {
-        Spades,
-        Hearts,
-        Diamonds,
-        Clubs
-    }
 
-    public enum CardRank
-    {
-        Two = 2,
-        Three,
-        Four,
-        Five,
-        Six,
-        Seven,
-        Eight,
-        Nine,
-        Ten,
-        Jack,
-        Queen,
-        King,
-        Ace
+
+        private int CompareCards(string card1, string card2)
+        {
+            string rank1 = card1.Substring(0, card1.IndexOf("_of"));
+            string rank2 = card2.Substring(0, card2.IndexOf("_of"));
+
+            Dictionary<string, int> rankValues = new Dictionary<string, int>()
+            {
+                {"ace", 14},
+                {"king", 13},
+                {"queen", 12},
+                {"jack", 11},
+                {"10", 10},
+                {"9", 9},
+                {"8", 8},
+                {"7", 7},
+                {"6", 6},
+                {"5", 5},
+                {"4", 4},
+                {"3", 3},
+                {"2", 2}
+            };
+
+            int value1 = rankValues[rank1];
+            int value2 = rankValues[rank2];
+
+            return value1 - value2;
+        }
+
+        private void UpdateUI()
+        {
+            txtPlayer1Cards.Text = player1Cards.Count.ToString();
+            txtPlayer2Cards.Text = player2Cards.Count.ToString();
+
+            lblPlayer1Card.Text = (player1Cards.Count > 0) ? player1Cards[0] : "Brak";
+            lblPlayer2Card.Text = (player2Cards.Count > 0) ? player2Cards[0] : "Brak";
+        }
+
+
+        private void txtPlayer1Cards_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPlayer2Cards_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPlayer2Card_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPlayer1Card_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblWarInfo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
+
